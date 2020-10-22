@@ -3,15 +3,15 @@ An implementation of deep learning with convolutional neural networks to play th
 
 ![giphy](https://user-images.githubusercontent.com/31298849/34912125-9ee2cf30-f88d-11e7-8e19-3de9e1faf5c2.gif)
 
-## Overview
+## Pick Out(Overview)
 
 DinoMl uses a convolutional neural network that takes an input of the game screen and outputs whether it should or should not jump at that specific moment. It is able to capture the screen, evaluate it, and output its calculations in real time to play the game.
 
-## How It Works
+## How It Works?
 
 For every frame, a screenshot is taken of the game. That is image is then resized to 10 by 40 pixels, turned black and white, and normalized to a value between 0 and 1. The array of data is then convoluted by 16 2x2x1 filters, 32 2x2x16 filters, and finally 64 2x2x32 filters, all with rectified linear units. It is then flattened to a size of 25,600 and put through three fully connected layers with sigmoid activation functions of size 25,600x256, 256x500, and 500x1. This final output represents the calculated probability for jumping to be the correct action. It then takes this number, which is between 0 and 1 due to the sigmoid function, and rounds it to serve as the final ouput. If this number is 1, it will input and hold the up arrow key. If it is 0, it will release the up arrow key and simply wait.
 
-## Requirements
+## what You need to run.....
 
 * OS X
 * python 2.6 or 2.7
